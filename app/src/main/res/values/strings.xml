@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Quiz en Images</string>
+    <string name="score_format">Score : %1$d / %2$d</string>
+    <string name="question_numero_format">Question %1$d sur %2$d</string>
+    <string name="progression_format">Progression : %1$d / %2$d questions répondues</string>
+
+    <string name="btn_suivant">Question suivante</string>
+    <string name="btn_voir_resultat">Voir le résultat</string>
+    <string name="btn_rejouer">Rejouer une partie</string>
+
+    <string name="feedback_correct">✓ Bonne réponse ! Bravo !</string>
+    <string name="feedback_incorrect">✗ Réponse incorrecte.\nLa bonne réponse était : %1$s</string>
+
+    <string name="titre_resultat">Quiz terminé !</string>
+    <string name="score_final_format">Votre score final : %1$d / %2$d</string>
+    <string name="pourcentage_format">Réussite : %1$d%%</string>
+
+    <string name="appreciation_parfait">Félicitations ! Un sans-faute remarquable !</string>
+    <string name="appreciation_bien">Très bon résultat ! Belle observation !</string>
+    <string name="appreciation_moyen">Pas mal ! Vous pouvez encore progresser.</string>
+    <string name="appreciation_reessayer">Entraînez-vous encore pour améliorer votre score !</string>
+</resources>

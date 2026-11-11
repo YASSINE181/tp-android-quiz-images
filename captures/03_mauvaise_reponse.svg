@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 800" width="420" height="800">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Arrière-plan Smartphone -->
+  <rect x="10" y="10" width="400" height="780" rx="36" fill="#1E293B" />
+  <rect x="18" y="18" width="384" height="764" rx="28" fill="#F4F6F9" />
+
+  <!-- Barre de statut Android -->
+  <path d="M 18,18 L 402,18 A 28,28 0 0,1 402,46 L 18,46 Z" fill="#0D47A1" />
+  <text x="36" y="38" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="12" font-weight="bold">12:00</text>
+  <circle cx="210" cy="32" r="6" fill="#000000" />
+  <text x="340" y="38" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="12">100% 🔋</text>
+
+  <!-- Bandeau supérieur fixe (Score inchangé: 1 / 5, Progression: 2 / 5) -->
+  <g filter="url(#shadow)">
+    <rect x="18" y="46" width="384" height="96" fill="#FFFFFF" />
+  </g>
+  <text x="34" y="80" fill="#1A73E8" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="20" font-weight="bold">Quiz en Images</text>
+  
+  <!-- Badge Score en haut à droite (1 / 5) -->
+  <rect x="278" y="60" width="108" height="32" rx="16" fill="#E8F0FE" />
+  <text x="332" y="81" fill="#1967D2" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Score : 1 / 5</text>
+
+  <!-- Barre de progression (2/5 remplie) -->
+  <rect x="34" y="104" width="352" height="8" rx="4" fill="#E2E8F0" />
+  <rect x="34" y="104" width="141" height="8" rx="4" fill="#1A73E8" />
+  <text x="34" y="128" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="11">Progression : 2 / 5 questions répondues</text>
+
+  <!-- Contenu -->
+  <text x="34" y="166" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="14" font-weight="bold">Question 2 sur 5</text>
+
+  <!-- Illustration Cercle -->
+  <rect x="34" y="180" width="352" height="150" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
+  <circle cx="210" cy="255" r="50" fill="#1E88E5" stroke="#0D47A1" stroke-width="3" />
+
+  <text x="34" y="360" fill="#1E293B" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="16" font-weight="bold">Quelle est la particularité de cette figure ?</text>
+
+  <!-- Choix 1 (Bonne réponse indiquée en vert) -->
+  <rect x="34" y="380" width="352" height="46" rx="12" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.5" />
+  <text x="54" y="409" fill="#15803D" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="13" font-weight="bold">✓ A. Elle n'a aucun sommet ni angle (Bonne réponse)</text>
+
+  <!-- Choix 2 (MAUVAISE RÉPONSE CHOISIE - ROUGE) -->
+  <rect x="34" y="434" width="352" height="46" rx="12" fill="#FEE2E2" stroke="#DC2626" stroke-width="2" />
+  <text x="54" y="463" fill="#B91C1C" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="13" font-weight="bold">✗ B. Elle possède quatre angles droits (Votre choix)</text>
+
+  <!-- Choix 3 (désactivé) -->
+  <rect x="34" y="488" width="352" height="46" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+  <text x="54" y="517" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="14">C. Elle a trois côtés égaux</text>
+
+  <!-- Message de retour / Feedback d'erreur -->
+  <rect x="34" y="546" width="352" height="52" rx="12" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.5" />
+  <text x="54" y="569" fill="#991B1B" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="13" font-weight="bold">✗ Réponse fausse (Score inchangé : 1 / 5)</text>
+  <text x="54" y="588" fill="#7F1D1D" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="11">La bonne réponse était : Elle n'a aucun sommet ni angle</text>
+
+  <!-- Bouton Question suivante -->
+  <g filter="url(#shadow)">
+    <rect x="34" y="614" width="352" height="52" rx="12" fill="#1A73E8" />
+  </g>
+  <text x="210" y="646" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Question suivante →</text>
+</svg>

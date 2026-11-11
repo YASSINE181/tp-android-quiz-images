@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte Rendu TP Android - Quiz en Images</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 30px 15px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        h1 {
+            color: #1e40af;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 12px;
+            font-size: 28px;
+            margin-top: 0;
+        }
+        h2 {
+            color: #1e3a8a;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 32px;
+            font-size: 22px;
+        }
+        h3 {
+            color: #2563eb;
+            margin-top: 24px;
+            font-size: 18px;
+        }
+        .meta-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+        .meta-box p {
+            margin: 4px 0;
+        }
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, "Courier New", monospace;
+            font-size: 14px;
+            color: #0f172a;
+        }
+        pre {
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 18px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #334155;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .badge-ok {
+            background-color: #dcfce7;
+            color: #166534;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 12px;
+            display: inline-block;
+        }
+        blockquote {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            margin: 15px 0;
+            padding: 12px 18px;
+            border-radius: 4px;
+        }
+        .question-card {
+            background-color: #faf5ff;
+            border: 1px solid #e9d5ff;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+        }
+        .question-title {
+            font-weight: bold;
+            color: #6b21a8;
+            margin-bottom: 8px;
+        }
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Compte Rendu de Travaux Pratiques</h1>
+        <h2 style="margin-top: -5px; border-bottom: none; color: #475569; font-size: 18px;">TP Android : Créer un Quiz en Images (Kotlin & XML)</h2>
+
+        <div class="meta-box">
+            <p><strong>Matière :</strong> Développement d'Applications Mobiles Android</p>
+            <p><strong>Technologie :</strong> Kotlin & Interface déclarative XML (sans Compose ni Fragment)</p>
+            <p><strong>Thème retenu :</strong> Les Formes Géométriques Régulières</p>
+            <p><strong>Étudiant(e) :</strong> Ghada</p>
+            <p><strong>Date :</strong> Novembre 2026</p>
+        </div>
+
+        <h2>1. Présentation du Projet et Choix du Thème</h2>
+        <p>
+            L'objectif de ce TP est de réaliser une application Android de quiz composée de cinq questions illustrées.
+            Pour chaque question, l'utilisateur observe une image et sélectionne une réponse parmi trois propositions sous forme de boutons.
+            L'application gère l'attribution des points, le déroulement des questions, la barre de progression, et affiche un écran de bilan final avec un bouton pour rejouer.
+        </p>
+        <p>
+            <strong>Thème retenu :</strong> Les <em>Formes Géométriques</em> (triangle, cercle, carré, étoile, rectangle).
+            Chaque forme est modélisée par un drawable vectoriel XML haute fidélité (aucun téléchargement externe requis, rendu parfait sans déformation).
+            Les questions imposent d'observer attentivement le visuel (nombre de côtés, d'angles, de sommets ou de branches).
+        </p>
+
+        <h2>2. Présentation de l'Interface et des Widgets Utilisés</h2>
+        <p>L'interface a été intégralement définie dans <code>res/layout/activity_main.xml</code>. Elle s'articule autour de deux zones principales :</p>
+        <ul>
+            <li>
+                <strong>Un bandeau supérieur fixe (<code>layout_header</code>) :</strong>
+                Conserve en permanence le titre de l'application, le score en haut à droite (<code>txt_score</code>) et la barre de progression horizontale (<code>progress_quiz</code>).
+                Cette zone ne défile pas, restant toujours visible pour l'utilisateur.
+            </li>
+            <li>
+                <strong>Une zone de contenu avec défilement (<code>ScrollView</code>) :</strong>
+                Permet une ergonomie optimale sur les petits écrans. Elle comprend :
+                <ul>
+                    <li><code>txt_numero_question</code> : numéro d'ordre (ex: Question 2 sur 5).</li>
+                    <li><code>img_question</code> : <code>ImageView</code> avec <code>adjustViewBounds="true"</code> et <code>scaleType="fitCenter"</code>.</li>
+                    <li><code>txt_question</code> : énoncé de la question.</li>
+                    <li><code>btn_choix1</code>, <code>btn_choix2</code>, <code>btn_choix3</code> : les 3 boutons de choix distincts.</li>
+                    <li><code>txt_feedback</code> : bandeau de correction lisible avec texte explicite et couleur.</li>
+                    <li><code>btn_suivant</code> : bouton de passage à la question suivante (ou "Voir le résultat" à la question 5).</li>
+                    <li><code>layout_resultat_container</code> : zone de récapitulatif final (score, pourcentage, appréciation et bouton <code>btn_rejouer</code>).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>3. Structure du Tableau de Questions</h2>
+        <p>La structure des données s'appuie sur la <code>data class Question</code> :</p>
+        <pre><code>data class Question(
+    val texte: String,
+    val imageResId: Int,
+    val choix: List&lt;String&gt;,
+    val bonneReponseIndex: Int,
+    val descriptionImage: String
+)</code></pre>
+        <p>
+            Dans <code>MainActivity.kt</code>, une liste immuable de 5 questions est déclarée.
+            Les indices de bonne réponse sont alternés (1, 0, 2, 1, 0) afin d'éviter qu'une position soit privilégiée.
+            Chaque question possède une <code>descriptionImage</code> injectée dans <code>contentDescription</code> pour l'accessibilité.
+        </p>
+
+        <h2>4. Événements, Calcul du Score et Progression</h2>
+        <ul>
+            <li><strong>Validation immédiate :</strong> Un clic sur l'un des trois boutons déclenche <code>validerReponse(index)</code>. Les 3 boutons sont immédiatement désactivés (<code>isEnabled = false</code>).</li>
+            <li><strong>Calcul du score :</strong> Si le choix est correct, le score est incrémenté de 1 (<code>score++</code>). En cas de mauvaise réponse, le score reste inchangé.</li>
+            <li><strong>Progression :</strong> Dans tous les cas (bonne ou mauvaise réponse), la progression augmente d'une unité (<code>progress = indiceCourant + 1</code>).</li>
+            <li><strong>Bonus Rotation :</strong> La méthode <code>onSaveInstanceState</code> sauvegarde l'indice, le score, l'état de réponse et la fin de partie pour une restauration fluide lors des rotations d'écran.</li>
+        </ul>
+
+        <h2>5. Réponses aux Questions de l'Énoncé</h2>
+        
+        <div class="question-card">
+            <div class="question-title">1. Comment représentez-vous une question et sa bonne réponse ?</div>
+            <p>
+                Une question est représentée par une <code>data class Question</code> en Kotlin comportant le texte, la ressource d'image, la liste des 3 choix, l'indice numérique de la bonne réponse (0, 1 ou 2) et la description d'accessibilité.
+                La bonne réponse est directement comparée à l'indice du bouton cliqué.
+            </p>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">2. Comment le clic sur un bouton permet-il de savoir quel choix a été sélectionné ?</div>
+            <p>
+                Chaque bouton de choix possède son propre <code>OnClickListener</code> passant son indice respectif (0 pour <code>btn_choix1</code>, 1 pour <code>btn_choix2</code>, 2 pour <code>btn_choix3</code>) à la méthode <code>validerReponse(indexChoisi)</code>.
+            </p>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">3. Comment empêchez-vous l'attribution de plusieurs points pour une question ?</div>
+            <p>
+                Par deux niveaux de sécurité : premièrement, les trois boutons de choix sont immédiatement désactivés via <code>bouton.isEnabled = false</code> dès le premier clic. Deuxièmement, une variable booléenne <code>reponseValidee</code> sert de verrou logique bloquant toute validation ultérieure.
+            </p>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">4. Quelle différence faites-vous entre le score et la progression ?</div>
+            <p>
+                Le <strong>score</strong> mesure la performance (seules les bonnes réponses augmentent le score).
+                La <strong>progression</strong> mesure l'avancement dans le questionnaire (chaque réponse donnée, qu'elle soit juste ou fausse, fait avancer la barre d'une unité).
+            </p>
+        </div>
+
+        <div class="question-card">
+            <div class="question-title">5. Comment détectez-vous la dernière question et affichez-vous le résultat ?</div>
+            <p>
+                Par la condition <code>indiceCourant == questions.size - 1</code>. Le bouton affiche alors "Voir le résultat". Au clic, la zone de questions est masquée (<code>View.GONE</code>) et la zone de résultat final s'affiche dans la même activité (<code>View.VISIBLE</code>) avec le bouton Rejouer.
+            </p>
+        </div>
+
+        <h2>6. Résultats des Tests</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Scénario de test</th>
+                    <th>Comportement attendu</th>
+                    <th>Résultat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Lancement</td><td>Question 1, 3 choix actifs, score 0/5, progression 0/5</td><td><span class="badge-ok">Conforme</span></td></tr>
+                <tr><td>Bonne réponse</td><td>Score +1, progression +1, feedback positif vert</td><td><span class="badge-ok">Conforme</span></td></tr>
+                <tr><td>Mauvaise réponse</td><td>Score inchangé, progression +1, correction affichée</td><td><span class="badge-ok">Conforme</span></td></tr>
+                <tr><td>Clics multiples</td><td>Aucun point en plus, boutons verrouillés</td><td><span class="badge-ok">Conforme</span></td></tr>
+                <tr><td>Question suivante</td><td>Nouvelle image, nouveaux choix, score préservé</td><td><span class="badge-ok">Conforme</span></td></tr>
+                <tr><td>Sans-faute (5/5)</td><td>Score final 5/5, progression 5/5, message de félicitations</td><td><span class="badge-ok">Conforme</span></td></tr>
+                <tr><td>Bouton Rejouer</td><td>Remise à zéro complète et retour à la question 1</td><td><span class="badge-ok">Conforme</span></td></tr>
+                <tr><td>Petit écran</td><td>Défilement vertical fluide, score fixe en haut</td><td><span class="badge-ok">Conforme</span></td></tr>
+                <tr><td>Rotation d'écran</td><td>État conservé via onSaveInstanceState</td><td><span class="badge-ok">Conforme</span></td></tr>
+            </tbody>
+        </table>
+
+        <h2>7. Conclusion</h2>
+        <p>
+            Le projet répond rigoureusement à l'ensemble des critères de l'énoncé du TP. L'application est fluide, robuste, ergonomique et conforme aux standards Android modernes.
+        </p>
+    </div>
+</body>
+</html>

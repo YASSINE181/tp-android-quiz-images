@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 800" width="420" height="800">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Arrière-plan Smartphone -->
+  <rect x="10" y="10" width="400" height="780" rx="36" fill="#1E293B" />
+  <rect x="18" y="18" width="384" height="764" rx="28" fill="#F4F6F9" />
+
+  <!-- Barre de statut Android -->
+  <path d="M 18,18 L 402,18 A 28,28 0 0,1 402,46 L 18,46 Z" fill="#0D47A1" />
+  <text x="36" y="38" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="12" font-weight="bold">12:00</text>
+  <circle cx="210" cy="32" r="6" fill="#000000" />
+  <text x="340" y="38" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="12">100% 🔋</text>
+
+  <!-- Bandeau supérieur fixe (Score final 4/5, Progression 5/5) -->
+  <g filter="url(#shadow)">
+    <rect x="18" y="46" width="384" height="96" fill="#FFFFFF" />
+  </g>
+  <text x="34" y="80" fill="#1A73E8" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="20" font-weight="bold">Quiz en Images</text>
+  
+  <!-- Badge Score en haut à droite -->
+  <rect x="278" y="60" width="108" height="32" rx="16" fill="#E8F0FE" />
+  <text x="332" y="81" fill="#1967D2" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Score : 4 / 5</text>
+
+  <!-- Barre de progression (5/5 = 100% complète) -->
+  <rect x="34" y="104" width="352" height="8" rx="4" fill="#1A73E8" />
+  <text x="34" y="128" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="11">Progression : 5 / 5 questions répondues (Quiz complet)</text>
+
+  <!-- Zone Résultat Final (dans la même activité, choix masqués) -->
+  <g transform="translate(0, 40)">
+    <!-- Étoile Dorée / Trophée -->
+    <polygon points="210,180 223,222 267,222 232,248 245,290 210,264 175,290 188,248 153,222 197,222" fill="#FFB300" stroke="#FF6F00" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Titre Quiz Terminé -->
+    <text x="210" y="340" fill="#1A73E8" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="28" font-weight="bold" text-anchor="middle">Quiz terminé !</text>
+
+    <!-- Score obtenu -->
+    <text x="210" y="385" fill="#1E293B" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="24" font-weight="bold" text-anchor="middle">Votre score final : 4 / 5</text>
+
+    <!-- Badge Pourcentage -->
+    <rect x="135" y="410" width="150" height="36" rx="18" fill="#E0F2FE" />
+    <text x="210" y="434" fill="#0369A1" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Réussite : 80%</text>
+
+    <!-- Message d'appréciation -->
+    <text x="210" y="480" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="16" text-anchor="middle">Très bon résultat ! Belle observation !</text>
+
+    <!-- Bouton Rejouer -->
+    <g filter="url(#shadow)">
+      <rect x="44" y="520" width="332" height="56" rx="14" fill="#1A73E8" />
+    </g>
+    <text x="210" y="555" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">↺ Rejouer une partie</text>
+  </g>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 800" width="420" height="800">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Arrière-plan Smartphone -->
+  <rect x="10" y="10" width="400" height="780" rx="36" fill="#1E293B" />
+  <rect x="18" y="18" width="384" height="764" rx="28" fill="#F4F6F9" />
+
+  <!-- Barre de statut Android -->
+  <path d="M 18,18 L 402,18 A 28,28 0 0,1 402,46 L 18,46 Z" fill="#0D47A1" />
+  <text x="36" y="38" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="12" font-weight="bold">12:00</text>
+  <circle cx="210" cy="32" r="6" fill="#000000" />
+  <text x="340" y="38" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="12">100% 🔋</text>
+
+  <!-- Bandeau supérieur fixe (Titre + Score) -->
+  <g filter="url(#shadow)">
+    <rect x="18" y="46" width="384" height="96" fill="#FFFFFF" />
+  </g>
+  <text x="34" y="80" fill="#1A73E8" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="20" font-weight="bold">Quiz en Images</text>
+  
+  <!-- Badge Score en haut à droite (0 / 5) -->
+  <rect x="278" y="60" width="108" height="32" rx="16" fill="#E8F0FE" />
+  <text x="332" y="81" fill="#1967D2" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Score : 0 / 5</text>
+
+  <!-- Barre de progression (0/5) -->
+  <rect x="34" y="104" width="352" height="8" rx="4" fill="#E2E8F0" />
+  <text x="34" y="128" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="11">Progression : 0 / 5 questions répondues</text>
+
+  <!-- Zone de contenu -->
+  <!-- Numéro de la question -->
+  <text x="34" y="166" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="14" font-weight="bold">Question 1 sur 5</text>
+
+  <!-- Carte d'illustration de la forme (Triangle) -->
+  <rect x="34" y="180" width="352" height="170" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
+  <!-- Triangle rouge-orangé -->
+  <polygon points="210,205 285,320 135,320" fill="#FF5722" stroke="#BF360C" stroke-width="3" stroke-linejoin="round" />
+
+  <!-- Question posée -->
+  <text x="34" y="380" fill="#1E293B" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="16" font-weight="bold">Combien de côtés possède cette figure ?</text>
+
+  <!-- Choix 1 -->
+  <rect x="34" y="402" width="352" height="50" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" />
+  <text x="54" y="433" fill="#1E293B" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="15">A. 4 côtés</text>
+
+  <!-- Choix 2 -->
+  <rect x="34" y="462" width="352" height="50" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" />
+  <text x="54" y="493" fill="#1E293B" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="15">B. 3 côtés</text>
+
+  <!-- Choix 3 -->
+  <rect x="34" y="522" width="352" height="50" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" />
+  <text x="54" y="553" fill="#1E293B" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="15">C. 5 côtés</text>
+
+  <!-- Légende informative sous les choix -->
+  <rect x="34" y="600" width="352" height="42" rx="10" fill="#F1F5F9" />
+  <text x="210" y="626" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="12" text-anchor="middle">Sélectionnez une réponse pour valider immédiatement</text>
+</svg>
